@@ -1,3 +1,4 @@
+import { Button, Switch, Text } from '@radix-ui/themes';
 import { css } from '../styled-system/css';
 
 export default function Home() {
@@ -8,11 +9,17 @@ export default function Home() {
             alignItems: 'center',
             width: '100vw',
             height: '100vh',
-            bgColor: '#333333'
+            bgColor: '#333333',
+            flexDirection: 'column'
         })}>
-            <p className={css({ fontSize: "4xl", fontWeight: 'bold' })}>
+            <Text className={css({ fontSize: "4xl", fontWeight: 'bold', color: '#ffffff', margin: '100px' })}>
                 Hello 🐼!
-            </p>
+            </Text>
+            <Button color='blue' className={css({ color: '#000000' })}>
+                <Text>mint color theme</Text>
+            </Button>
+            <Switch className={css({})} />
+            <Switch />
         </div>
     )
 }

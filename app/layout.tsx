@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Theme } from '@radix-ui/themes';
 import "./globals.css";
 import '@radix-ui/themes/styles.css';
+import NavBar from "./(components)/nav-bar";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -26,9 +27,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="ko">
             <body className={`${geistSans.variable} ${geistMono.variable}`}>
-                <Theme accentColor="mint" grayColor="sand" radius="large" >
+                <Theme accentColor="mint">
+                    <NavBar />
                     {children}
                 </Theme>
             </body>

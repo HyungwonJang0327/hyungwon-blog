@@ -1,17 +1,17 @@
-import { Box } from "@radix-ui/themes";
+import { Box, ThemeProps } from "@radix-ui/themes";
 import ClientRootLayout from "../(components)/client-root-layout";
 import NavBar from "../(components)/nav-bar";
 
 const getDesignData = async (): Promise<{
-    themeColor: string
+    accentColor: ThemeProps['accentColor']
 }> => {
     try {
         return {
-            themeColor: 'blue'
+            accentColor: 'green'
         }
     } catch (error) {
         return {
-            themeColor: 'mint'
+            accentColor: 'indigo'
         }
     }
 }
@@ -28,7 +28,7 @@ export default async function Layout({
             flexGrow: 1,
             display: 'flex'
         }}>
-            <ClientRootLayout themeColor={designData?.themeColor || ''}>
+            <ClientRootLayout accentColor={designData?.accentColor || 'indigo'}>
                 <NavBar />
                 {children}
                 {/* <ThemePanel /> */}

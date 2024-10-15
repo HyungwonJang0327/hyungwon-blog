@@ -2,26 +2,21 @@
 import { css } from '@/styled-system/css';
 import {
     Button, Switch, Box, Text,
-    useThemeContext, Theme,
+    useThemeContext, Theme, ThemeProps,
 } from '@radix-ui/themes';
 
 
-export default function ClientRootLayout({ children, themeColor }: {
+export default function ClientRootLayout({ children, accentColor }: {
     children: React.ReactNode;
-    themeColor: string;
+    accentColor: ThemeProps['accentColor'];
 }) {
-    const { appearance = 'light' } = useThemeContext()
+    const { } = useThemeContext()
     return (
-        <Theme accentColor={themeColor as any}
-            appearance={'dark'}>
+        <Theme accentColor={accentColor}>
             <Box className={css({
-                backgroundColor: appearance === 'light'
-                    ? '#ffffff'
-                    : '#333333',
                 flexGrow: 1
             })}>
                 {children}
-                <Text>{appearance}</Text>
             </Box>
         </Theme >
     )
